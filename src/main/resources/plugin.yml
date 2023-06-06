@@ -1,0 +1,11 @@
+name: LocationDescription
+version: '${project.version}'
+main: ru.permasha.locationdescription.Main
+api-version: 1.19
+softdepend: [HolographicDisplays]
+commands:
+  locdesc:
+    description: Add attributes to location
+permissions:
+  qbengine.command.locdesc:
+    description: Permits player use /locdesc command
