@@ -69,6 +69,13 @@ public class AttributesManager {
         return colorize(plugin.getPlugin().getConfig().getString("locdesc.symbol"));
     }
 
+    /**
+     * @return CoolDown for messages
+     */
+    public int getCoolDown() {
+        return plugin.getPlugin().getConfig().getInt("locdesc.cooldown");
+    }
+
     public Location fromJsonLocation(String json) {
         return new Gson().fromJson(json, LocationModel.class).toLocation();
     }

@@ -68,8 +68,8 @@ public class LocDescCommand implements CommandExecutor {
         }
 
         if (args[0].equalsIgnoreCase("set")) {
-            if (args.length != 6) {
-                sender.sendMessage(colorize("&cСинтаксис: &7/locdesc get <x> <y> <z> <radius> <description>"));
+            if (args.length < 6) {
+                sender.sendMessage(colorize("&cСинтаксис: &7/locdesc set <x> <y> <z> <radius> <description>"));
                 return true;
             }
 
@@ -118,8 +118,9 @@ public class LocDescCommand implements CommandExecutor {
                 return true;
             }
 
+            plugin.getHologramManager().removeHologram(location
+                    .add(0.5D, 0.5D, 0.5D));
             plugin.getDatabase().removeLocation(jsonLoc);
-            plugin.getHologramManager().removeHologram(location);
 
             sender.sendMessage(colorize("&aВсе атрибуты в локации были успешно удалены"));
             return true;
